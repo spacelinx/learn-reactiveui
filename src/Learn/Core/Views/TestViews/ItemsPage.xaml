@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<views:ContentPageBase xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+               xmlns:rxui="clr-namespace:ReactiveUI.XamForms;assembly=ReactiveUI.XamForms"
+               xmlns:views="clr-namespace:Learn.Core.Views.Base;assembly=Learn.Core"
+               xmlns:test="clr-namespace:Learn.Core.Views.TestViews;assembly=Learn.Core"
+             x:TypeArguments="test:ItemsViewModel"
+             x:Class="Learn.Core.Views.TestViews.ItemsPage">
+
+    <StackLayout>
+        <ListView x:Name="MyListView"
+            ItemsSource="{Binding Todos}"
+            SelectedItem="{Binding SelectedTodo}"
+            CachingStrategy="RecycleElement">
+
+            <!--Custom View Cells-->
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell IsEnabled="{Binding IsEnabled}">
+                        <StackLayout Orientation="Horizontal">
+                            <Label Text="{Binding Title}" Style="{DynamicResource ListItemTextStyle}" HorizontalOptions="Start"/>
+                            <Switch IsToggled="{Binding IsDone}" HorizontalOptions="End" IsEnabled="{Binding IsEnabled}"/>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+        <StackLayout Orientation="Horizontal">
+            <Entry Text="{Binding TodoTitle}" HorizontalOptions="FillAndExpand"/>
+            <Button Text="Add" HorizontalOptions="End" Command="{Binding AddCommand}"/>
+        </StackLayout>
+    </StackLayout>
+  
+</views:ContentPageBase>
+
