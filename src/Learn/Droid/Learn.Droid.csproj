@@ -170,30 +170,6 @@
     <Compile Include="Services\ToastService.cs" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidAsset Include="..\CommonResources\Fonts\poppins\Poppins-Bold.ttf">
-      <Link>Assets\Poppins-Bold.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\CommonResources\Fonts\poppins\Poppins-Light.ttf">
-      <Link>Assets\Poppins-Light.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\CommonResources\Fonts\poppins\Poppins-Medium.ttf">
-      <Link>Assets\Poppins-Medium.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\CommonResources\Fonts\poppins\Poppins-Regular.ttf">
-      <Link>Assets\Poppins-Regular.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\CommonResources\Fonts\poppins\Poppins-SemiBold.ttf">
-      <Link>Assets\Poppins-SemiBold.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\CommonResources\Fonts\firasans\FiraSans-Bold.ttf">
-      <Link>Assets\FiraSans-Bold.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\CommonResources\Fonts\firasans\FiraSans-Regular.ttf">
-      <Link>Assets\FiraSans-Regular.ttf</Link>
-    </AndroidAsset>
-    <AndroidAsset Include="..\CommonResources\Fonts\firasans\FiraSans-SemiBold.ttf">
-      <Link>Assets\FiraSans-SemiBold.ttf</Link>
-    </AndroidAsset>
     <None Include="Resources\AboutResources.txt" />
     <None Include="Assets\AboutAssets.txt" />
   </ItemGroup>
