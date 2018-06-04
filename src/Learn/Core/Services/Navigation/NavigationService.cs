@@ -1,5 +1,5 @@
 ﻿using System;
-using Autofac;
+using System.ComponentModel;
 using ReactiveUI;
 using Splat;
 
@@ -7,23 +7,20 @@ namespace Learn.Core.Services.Navigation
 {
     public static class NavigationService
     {
-        private static IContainer _container;
         private static RoutingState _router;
 
-        public static void Create(IContainer container, RoutingState router)
+        public static void Create(RoutingState router)
         {
-            _container = container;
             _router = router;
         }
 
-        public static void Navigation(Type viewModel)
+        public static void Navigation(Type type)
         {
-            var obj = _container.Resolve(viewModel);
-            var view = (IRoutableViewModel)obj;
+            var viewModel = (IRoutableViewModel)Locator.Current.GetService(type);
 
             _router
                 .NavigateAndReset
-                .Execute(view)
+                .Execute(viewModel)
                 .Subscribe();
         }
         public static void Navigation<T>(Type viewModel, T parameter)

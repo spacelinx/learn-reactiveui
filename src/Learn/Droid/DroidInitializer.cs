@@ -1,15 +1,15 @@
-﻿using Autofac;
-using Learn.Core.NativeInterfaces;
+﻿using Learn.Core.NativeInterfaces;
 using Learn.Core.Services.NativeInterfaces;
 using Learn.Droid.Services;
+using Splat;
 
 namespace Learn.Droid
 {
     public class DroidInitializer : IPlatformInitializer
     {
-        public void RegisterTypes(ContainerBuilder builder)
+        public void RegisterTypes(IMutableDependencyResolver resolver)
         {
-            builder.RegisterType<ToastService>().As<IToastService>();
+            resolver.Register(() => new ToastService(), typeof(IToastService));
         }
     }
 }

@@ -1,9 +1,10 @@
-﻿using Autofac;
+﻿
+using Splat;
 
 namespace Learn.Core.NativeInterfaces
 {
     public interface IPlatformInitializer
     {
-        void RegisterTypes(ContainerBuilder builder);
+        void RegisterTypes(IMutableDependencyResolver resolver);
     }
 }

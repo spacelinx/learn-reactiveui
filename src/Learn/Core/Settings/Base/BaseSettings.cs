@@ -1,5 +1,4 @@
-﻿using Autofac;
-using Learn.Core.Models;
+﻿using Learn.Core.Models;
 using Learn.Core.Services.DeviceInfo;
 using Xamarin.Forms;
 
@@ -27,8 +26,8 @@ namespace Learn.Core.Settings.Base
                 // can't create this object in a constructor as settings object
                 // won't be created until after the Container.Build command is issued
                 // It is likely that settings is created for the first time within the DI bootstrapper.
-                if (_deviceInfoService == null)
-                    _deviceInfoService = ((Startup.App)Application.Current).Container.Resolve<IDeviceInfoService>();
+//                if (_deviceInfoService == null)
+//                    _deviceInfoService = ((Startup.App)Application.Current).Container.Resolve<IDeviceInfoService>();
 
                 if (_screenDimensions == null)
                     _screenDimensions = new ScreenDimensions();

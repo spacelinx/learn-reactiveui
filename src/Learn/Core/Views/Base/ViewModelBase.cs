@@ -17,10 +17,7 @@ namespace Learn.Core.Views.Base
             protected set;
         }
 
-        public ViewModelActivator Activator
-        {
-            get { return viewModelActivator; }
-        }
+        public ViewModelActivator Activator => viewModelActivator;
 
         protected readonly ViewModelActivator viewModelActivator = new ViewModelActivator();
 
