@@ -59,17 +59,7 @@ namespace Learn.Core.Views.Login
 
             this.WhenAnyValue(x => x.UserName, x => x.Password,
                 (email, password) =>
-                (
-                    ///Validate the password
-                    !string.IsNullOrEmpty(password) && password.Length > 5
-                )
-                &&
-                (
-                    ///Validate teh email.
-                    !string.IsNullOrEmpty(email)
-                            &&
-                     Regex.Matches(email, "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$").Count == 1
-                ))
+                !string.IsNullOrEmpty(password) && password.Length > 5 && !string.IsNullOrEmpty(email) && Regex.Matches(email, "^\\w+([-+.']\\w+)*@\\w+([-.]\\w+)*\\.\\w+([-.]\\w+)*$").Count == 1)
                 .ToProperty(this, v => v.ValidLogin, out _validLogin);
 
             LoginCommand = ReactiveCommand.CreateFromTask(async () =>
