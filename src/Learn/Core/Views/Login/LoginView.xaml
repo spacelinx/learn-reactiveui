@@ -10,8 +10,8 @@
     <ContentPage.Content>
         <StackLayout>
             <Label Text="Login" FontSize="Large" FontAttributes="Bold" HorizontalOptions="Center" VerticalOptions="Center" Margin="10"/>
-            <Entry Placeholder="Email" Text="{Binding UserName}" Margin="10, 50, 10, 0"/>
-            <Entry Placeholder="Password" IsPassword="True" Text="{Binding Password}" Margin="10"/>
+            <Entry Placeholder="Email" Text="{Binding UserName}" x:Name="Email" Margin="10, 50, 10, 0"/>
+            <Entry Placeholder="Password" IsPassword="True" x:Name="Password" Text="{Binding Password}" Margin="10"/>
             <Button HorizontalOptions="Center" Margin="10" Text="Login" Command="{Binding LoginCommand}"/>
         </StackLayout>
     </ContentPage.Content>
